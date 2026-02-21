@@ -1,12 +1,12 @@
 class WhatsAppClone {
-    constructor() {
+    constructor() {          //brain
         this.currentChat = null;
         this.chats = this.loadChats();
         this.contacts = this.loadContacts();
         this.init();
     }
 
-    init() {
+    init() {                //display
         this.bindEvents();
         this.renderChatList();
         this.renderContacts();
@@ -218,7 +218,7 @@ class WhatsAppClone {
         this.renderChatList(); // Re-render to update unread count
     }
 
-    renderMessages() {
+    renderMessages() {//painter ---->display new updates on screen
         if (!this.currentChat) return;
 
         const messagesContainer = document.getElementById('messages');
@@ -236,7 +236,7 @@ class WhatsAppClone {
             messagesContainer.appendChild(messageDiv);
         });
 
-        // Scroll to bottom
+        // Scroll to bottom--->50msg-then new go to bottom --telling browser to move to bottom
         document.getElementById('messagesContainer').scrollTop = document.getElementById('messagesContainer').scrollHeight;
     }
 
@@ -400,7 +400,7 @@ class WhatsAppClone {
     }
 }
 
-// Initialize the app when DOM is loaded
+// Initialize the app when DOM is loaded  ---->browser event
 document.addEventListener('DOMContentLoaded', () => {
     new WhatsAppClone();
 });
